@@ -8,14 +8,9 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.entity.Product;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Integer> {
-//@Query("select p from Product p where p.productPrice between ?1 and ?2")
-//	public List<Product> getAllProductsBetween(int initalPrice, int finalPrice);
+public interface ProductRepository extends JpaRepository<Product,Integer> {
 
-	public List<Product> findByProductPriceBetween(int initialPrice, int finalPrice);
-
-	public List<Product> findByProductCategory(String productCategory);
-
+	public List<Product> findByProductPriceBetween(int totalPrice,int finalPrice );
+	public List<Product> findByProductCategory(String Category);
 	public List<Product> findByProductPriceLessThan(int price);
-
 }
